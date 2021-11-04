@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_3dprint_jeniscetakan,3dprint.jeniscetakan,model_3dprint_jeniscetakan,,1,1,1,1
+access_3dprint_caracetak,3dprint.caracetak,model_3dprint_caracetak,,1,1,1,1
+access_3dprint_order,3dprint.order,model_3dprint_order,,1,1,1,1
+access_3dprint_detailcetakan,3dprint.detailcetakan,model_3dprint_detailcetakan,,1,1,1,1

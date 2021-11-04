@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+  <!-- model.name tree view -->
+  <record id="3dprint_jeniscetakan_view_tree" model="ir.ui.view">
+    <field name="name">3dprint.jeniscetakan.view.tree</field>
+    <field name="model">3dprint.jeniscetakan</field>
+    <field name="arch" type="xml">
+      <tree>
+        <!-- Add your fields here -->
+        <field name="name"></field>
+        <field name="tipe"></field>
+        <field name="ukuran"></field>
+        <field name="teknik_id"></field>
+        <field name="active"></field>
+        <field name="harga"></field>
+        
+
+      </tree>
+    </field>
+  </record>
+
+  <!-- model.name form view -->
+  <record id="3dprint_jeniscetakan_view_form" model="ir.ui.view">
+    <field name="name">3dprint.jeniscetakan.view.form</field>
+    <field name="model">3dprint.jeniscetakan</field>
+    <field name="arch" type="xml">
+      <form string="Daftar Harga Cetakan">
+        <sheet>
+          <group>
+            <group  colspan='4'>
+              <group colspan='2'>                
+                <separator string="JENIS CETAK"/>
+                  <field name="name"/>                    
+                  <field name="ukuran"/>
+              </group>
+              <group colspan='2'>
+                <separator string="JENIS MATERIAL"/>
+                  <field name="tipe"/>
+                  <field name="teknik_id"/>               
+              </group>
+              <notebook colspan='4'>
+                <page string="DESKRIPSI BAHAN">
+                  <field name="deskripsi"/>
+                </page>
+                <page string="DESKRIPSI PENCETAKAN">
+                  <field name="deskrip"/>
+                </page>
+              </notebook>
+
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- model.name search view -->
+  <record id="3dprint_jeniscetakan_view_search" model="ir.ui.view">
+    <field name="name">3dprint.jeniscetakan.view.search</field>
+    <field name="model">3dprint.jeniscetakan</field>
+    <field name="arch" type="xml">
+      <search string="Pencarian">
+        <!-- Add your fields here -->
+        <field name="name"/>
+        <field name="tipe"/>
+        <filter name="pla" string="PLA" domain="[('tipe', 'ilike', 'pla')]" />
+        <filter name="abs" string="ABS" domain="[('tipe', 'ilike', 'abs')]" />
+      </search>
+    </field>
+  </record>
+
+  <!-- model.name action window -->
+  <record id="3dprint_jeniscetakan_action" model="ir.actions.act_window">
+    <field name="name">Jenis Cetakan 3D Print</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">3dprint.jeniscetakan</field>
+    <field name="view_mode">tree,form</field>
+
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_smiling_face">
+        Diisi dengan daftar cetakan dan harga
+      </p><p>
+        <!-- More details about what a user can do with this object will be OK --> 
+      </p>
+    </field>
+  </record>
+  
+
+  <!-- This Menu Item must have a parent and an action -->
+  <menuitem id="3dprint_bahancetakan_menu_act" 
+    name="Bahan Cetakan" 
+    parent="3dprint_datamaster_menu_categ" 
+    action="3dprint_jeniscetakan_action" 
+    sequence="10"/>
+    
+  
+  </data>
+</odoo>

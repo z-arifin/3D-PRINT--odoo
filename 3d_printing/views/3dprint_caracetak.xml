@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+  <!-- model.name tree view -->
+  <record id="3dprint_caracetak_view_tree" model="ir.ui.view">
+    <field name="name">3dprint.caracetak.view.tree</field>
+    <field name="model">3dprint.caracetak</field>
+    <field name="arch" type="xml">
+      <tree>
+        <!-- Add your fields here -->
+        <field name="name"></field>
+        <field name="harga"></field>
+        <field name="ukuran"></field>      
+        <field name="tersedia"></field>        
+        <field name="deskripsi"></field>
+        
+
+      </tree>
+    </field>
+  </record>
+
+  <!-- model.name form view -->
+  <record id="3dprint_caracetak_view_form" model="ir.ui.view">
+    <field name="name">3dprint.caracetak.view.form</field>
+    <field name="model">3dprint.caracetak</field>
+    <field name="arch" type="xml">
+      <form string="Daftar Harga Cetakan">
+        <sheet>
+          <group>
+            <group  colspan='4'>
+              <group colspan='2'>                
+                <separator string="TEKNIK DAN BAHAN"/>
+                  <field name="name"/>                    
+                  <field name="model_ids"/>
+              </group>
+              <group colspan='2'>
+                <separator string="UKURAN"/>
+                  <field name="ukuran"/>
+                  <field name="harga"/>
+                  <field name="tersedia"/>                
+              </group>
+              <notebook colspan='4'>
+                <page string="DESKRIPSI PENCETAKAN">
+                  <field name="deskripsi"/>
+                </page>
+                <page string="JENIS CETAKAN">
+                  <field name="models_ids"/>
+                </page>
+                <page string="MANAGER">
+                  <field name="pegawai_id"/>
+                </page>
+              </notebook>
+
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- model.name action window -->
+  <record id="3dprint_caracetak_action" model="ir.actions.act_window">
+    <field name="name">Jenis Teknik Cetakan 3D Print</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">3dprint.caracetak</field>
+    <field name="view_mode">tree,form</field>
+
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_smiling_face">
+        Diisi dengan daftar cara cetakan
+      </p><p>
+        <!-- More details about what a user can do with this object will be OK --> 
+      </p>
+    </field>
+  </record>
+  
+
+  <!-- This Menu Item must have a parent and an action -->
+  <menuitem id="3dprint_caracetak_menu_act" 
+    name="Teknik Cetakan" 
+    parent="3dprint_datamaster_menu_categ" 
+    action="3dprint_caracetak_action" 
+    sequence="12"/>
+    
+  
+  </data>
+</odoo>

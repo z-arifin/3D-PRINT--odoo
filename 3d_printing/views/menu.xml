@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+        <menuitem id="3dprint_menu_root" name="3d PRINT" sequence="10"/>
+
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="3dprint_datamaster_menu_categ" 
+            name="Operation" 
+            parent="3dprint_menu_root" 
+            sequence="10"/> 
+
+        <menuitem id="3dprint_datacontact_menu_categ" 
+            name="Contacts" 
+            parent="3dprint_menu_root" 
+            sequence="11"/> 
+       
+    
+    </data>
+</odoo>
